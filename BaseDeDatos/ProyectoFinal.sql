@@ -75,5 +75,21 @@ CREATE TABLE NotasTrabajo(
     
 
 );
+CREATE TABLE Notas (
+    id_NotasTrabajo INT,
+    id_Notasvarios INT,
+    id_NotasSalud INT,
+    id_NotasFinanzas INT,
+    id_NotasAcademicas INT,
+    id_NotasPersonal INT,
+    id_Persona INT,
+    FOREIGN KEY (id_NotasTrabajo) REFERENCES NotasTrabajo(id_NotasTrabajo),
+    FOREIGN KEY (id_Notasvarios) REFERENCES Notasvarios(id_Notasvarios),
+    FOREIGN KEY (id_NotasSalud) REFERENCES NotasSalud(id_NotasSalud),
+    FOREIGN KEY (id_NotasFinanzas) REFERENCES NotasFinanzas(id_NotasFinanzas),
+    FOREIGN KEY (id_NotasAcademicas) REFERENCES NotasAcademicas(id_NotasAcademicas),
+    FOREIGN KEY (id_NotasPersonal) REFERENCES NotasPersonales(id_NotasPersonal),
+    FOREIGN KEY (id_Persona) REFERENCES Personas(id_Persona)
+);
 
 
